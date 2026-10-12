@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandro Dev | Informatics Engineering Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#0a0f1d',
+                            card: '#111827',
+                            border: '#1f293d',
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            indigo: '#6366f1',
+                            accent: '#38bdf8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter & Fira Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0f1d;
+            color: #f3f4f6;
+        }
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+        /* Custom neon glowing effects */
+        .neon-glow-cyan {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
+        }
+        .neon-glow-emerald {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-cyber-dark bg-grid-pattern min-h-screen selection:bg-cyan-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-cyber-dark/80 backdrop-blur-md border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-500 flex items-center justify-center text-cyber-dark font-bold font-mono text-xl shadow-lg shadow-cyan-500/30 group-hover:scale-105 transition-transform">
+                    &lt;/&gt;
+                </div>
+                <span class="font-mono font-bold text-lg tracking-wider text-white">
+                    ALEX<span class="text-cyan-400">.DEV</span>
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#about" class="text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-cyan-400 transition-colors">Tech Stack</a>
+                <a href="#projects" class="text-gray-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#terminal" class="text-gray-300 hover:text-cyan-400 transition-colors">Terminal</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-105 transition-all">
+                    Let's Connect
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cyber-card border-b border-cyber-border px-6 py-4 space-y-4 shadow-xl">
+            <a href="#about" class="block text-gray-300 hover:text-cyan-400 font-medium">About</a>
+            <a href="#skills" class="block text-gray-300 hover:text-cyan-400 font-medium">Tech Stack</a>
+            <a href="#projects" class="block text-gray-300 hover:text-cyan-400 font-medium">Projects</a>
+            <a href="#terminal" class="block text-gray-300 hover:text-cyan-400 font-medium">Terminal</a>
+            <a href="#contact" class="block text-center w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold">
+                Let's Connect
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-xs sm:text-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Available for freelance & research projects</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                        Code. Compile. <br>
+                        <span class="bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-500 bg-clip-text text-transparent text-glow">
+                            Conquer.
+                        </span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Mahasiswa Teknik Informatika tingkat akhir yang berfokus pada <span class="text-cyan-300 font-medium">Software Engineering</span>, Algoritma Kompleks, dan Arsitektur Web Modern. Mengubah kopi menjadi kode efisien.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-cyber-dark font-bold font-mono shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:scale-105 transition-all flex items-center justify-center space-x-2">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#terminal" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cyber-card border border-cyber-border text-gray-200 font-mono hover:border-cyan-500/50 hover:bg-cyber-card/80 transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-terminal text-cyan-400"></i>
+                            <span>Open Terminal</span>
+                        </a>
+                    </div>
+
+                    <!-- Tech stats mini bar -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-cyber-border max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-mono text-2xl sm:text-3xl font-bold text-cyan-400">3.88</p>
+                            <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">GPA / IPK</p>
+                        </div>
+                        <div>
+                            <p class="font-mono text-2xl sm:text-3xl font-bold text-emerald-400">15+</p>
+                            <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Repositori GitHub</p>
+                        </div>
+                        <div>
+                            <p class="font-mono text-2xl sm:text-3xl font-bold text-indigo-400">4+</p>
+                            <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Tahun Ngoding</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Illustration / Cyber Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-emerald-500 opacity-30 blur-xl"></div>
+                        <div class="relative bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-2xl space-y-6">
+                            
+                            <!-- Window header -->
+                            <div class="flex items-center justify-between pb-4 border-b border-cyber-border">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="font-mono text-xs text-gray-400">alex_profile.cpp</span>
+                            </div>
+
+                            <!-- Code snippet in hero -->
+                            <div class="font-mono text-xs sm:text-sm text-gray-300 space-y-2 overflow-x-auto">
+                                <p><span class="text-purple-400">#include</span> <span class="text-emerald-300">&lt;iostream&gt;</span></p>
+                                <p><span class="text-purple-400">#include</span> <span class="text-emerald-300">&lt;string&gt;</span></p>
+                                <br>
+                                <p><span class="text-blue-400">class</span> <span class="text-yellow-400">InformaticsStudent</span> {</p>
+                                <p class="pl-4"><span class="text-blue-400">public:</span></p>
+                                <p class="pl-8"><span class="text-cyan-400">std::string</span> name = <span class="text-emerald-300">"Alexandro"</span>;</p>
+                                <p class="pl-8"><span class="text-cyan-400">std::string</span> major = <span class="text-emerald-300">"Teknik Informatika"</span>;</p>
+                                <p class="pl-8"><span class="text-cyan-400">std::string</span> passion = <span class="text-emerald-300">"Fullstack & Systems"</span>;</p>
+                                <p class="pl-4">};</p>
+                                <p><span class="text-blue-400">int</span> <span class="text-yellow-400">main</span>() {</p>
+                                <p class="pl-4"><span class="text-cyan-400">InformaticsStudent</span> dev;</p>
+                                <p class="pl-4"><span class="text-yellow-400">std::cout</span> &lt;&lt; <span class="text-emerald-300">"Welcome to my digital universe!"</span>;</p>
+                                <p class="pl-4"><span class="text-purple-400">return</span> 0;</p>
+                                <p>}</p>
+                            </div>
+
+                            <!-- Interactive status tag -->
+                            <div class="pt-2 flex items-center justify-between text-xs font-mono text-gray-400 border-t border-cyber-border">
+                                <span>Status: <span class="text-emerald-400">Compiling ideas...</span></span>
+                                <span class="text-cyan-400"><i class="fa-solid fa-microchip"></i> v2.6.4</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-cyber-card/40 border-y border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="font-mono text-cyan-400 text-sm tracking-widest uppercase">// 01. ABOUT ME</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Passion & Background</h3>
+                <p class="text-gray-400">Menjelajahi dunia komputasi dari level rendah hingga pengembangan web tingkat lanjut.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-8 hover:border-cyan-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Software Engineering</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Fokus pada pembuatan kode yang bersih, modular, dan terstruktur. Mengutamakan Design Patterns dan Clean Code principles dalam setiap arsitektur aplikasi.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-8 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Algoritma & Struktur Data</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Gemar memecahkan masalah kompleks melalui optimalisasi waktu dan ruang (Big-O notation). Aktif dalam kompetisi pemrograman dan problem solving platform.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-8 hover:border-indigo-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Fullstack Web Dev</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Membangun aplikasi web responsif dan interaktif menggunakan teknologi modern seperti JavaScript, React, Tailwind CSS, Python, dan backend RESTful API.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tech Stack Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="font-mono text-emerald-400 text-sm tracking-widest uppercase">// 02. TECH STACK</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Languages, Tools & Frameworks</h3>
+                <p class="text-gray-400">Senjata utama yang saya gunakan sehari-hari dalam merancang solusi berbasis teknologi.</p>
+            </div>
+
+            <!-- Grid of Skills -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                
+                <!-- Skill Item -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-orange-400 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">HTML5 / CSS3</p>
+                    <span class="text-xs text-gray-500">Advanced</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-yellow-400 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">JavaScript</p>
+                    <span class="text-xs text-gray-500">Advanced</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-blue-400 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">Python</p>
+                    <span class="text-xs text-gray-500">Proficient</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-indigo-400 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">C++ / C</p>
+                    <span class="text-xs text-gray-500">Algorithms</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-cyan-400 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">React.js</p>
+                    <span class="text-xs text-gray-500">Intermediate</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-teal-400 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">Tailwind CSS</p>
+                    <span class="text-xs text-gray-500">Expert</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-red-500 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">Git & GitHub</p>
+                    <span class="text-xs text-gray-500">Version Control</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-blue-500 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">VS Code</p>
+                    <span class="text-xs text-gray-500">Primary IDE</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-green-500 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">MySQL / SQL</p>
+                    <span class="text-xs text-gray-500">Database</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-purple-400 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-brands fa-linux"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">Linux / Bash</p>
+                    <span class="text-xs text-gray-500">OS & Scripting</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-yellow-500 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">Firebase</p>
+                    <span class="text-xs text-gray-500">Backend-as-a-Service</span>
+                </div>
+
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 text-center hover:border-cyan-400/60 hover:bg-cyber-card/80 transition-all group cursor-pointer">
+                    <div class="text-4xl text-indigo-400 mb-3 group-hover:scale-125 transition-transform">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <p class="font-mono font-semibold text-white text-sm">Docker</p>
+                    <span class="text-xs text-gray-500">Containerization</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase Section -->
+    <section id="projects" class="py-20 bg-cyber-card/40 border-y border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="font-mono text-cyan-400 text-sm tracking-widest uppercase">// 03. FEATURED PROJECTS</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Project Showcase</h3>
+                <p class="text-gray-400">Beberapa karya pilihan yang dikembangkan selama masa kuliah dan riset mandiri.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-900">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" alt="Interactive Web Scrapbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" onerror="this.src='https://placehold.co/800x400/111827/06b6d4?text=Web+Scrapbook'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 font-mono text-xs">Fullstack</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Interactive Web Scrapbook</h4>
+                            <p class="text-gray-400 text-sm">Aplikasi web dinamis untuk menyimpan cuplikan artikel, kode snippet, dan catatan riset dengan fitur live search & markdown support.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-cyan-400 font-mono text-xs">JavaScript</span>
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-cyan-400 font-mono text-xs">Tailwind</span>
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-cyan-400 font-mono text-xs">Node.js</span>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-2 border-t border-cyber-border">
+                                <a href="https://github.com" target="_blank" class="text-sm font-medium text-gray-300 hover:text-cyan-400 flex items-center space-x-1.5">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#demo" onclick="showNotification('Membuka demo live Interactive Web Scrapbook...')" class="text-sm font-medium text-cyan-400 hover:text-cyan-300 flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-900">
+                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800" alt="Algorithmic Visualizer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" onerror="this.src='https://placehold.co/800x400/111827/10b981?text=Algo+Visualizer'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-xs">Data Structures</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Algorithmic Visualizer</h4>
+                            <p class="text-gray-400 text-sm">Visualisasi interaktif untuk algoritma sorting (Bubble, Quick, Merge) dan pathfinding (Dijkstra, A*) untuk media pembelajaran struktur data.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-emerald-400 font-mono text-xs">HTML5 Canvas</span>
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-emerald-400 font-mono text-xs">JavaScript</span>
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-emerald-400 font-mono text-xs">Tailwind</span>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-2 border-t border-cyber-border">
+                                <a href="https://github.com" target="_blank" class="text-sm font-medium text-gray-300 hover:text-emerald-400 flex items-center space-x-1.5">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#demo" onclick="showNotification('Membuka demo live Algorithmic Visualizer...')" class="text-sm font-medium text-emerald-400 hover:text-emerald-300 flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-gray-900">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800" alt="Mobile Game Mechanics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" onerror="this.src='https://placehold.co/800x400/111827/6366f1?text=Game+Mechanics'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-400 font-mono text-xs">Game Dev</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Cyber Runner Game Mechanics</h4>
+                            <p class="text-gray-400 text-sm">Prototipe mekanika game 2D berbasis web dengan sistem physics collision sederhana, custom sprite animation, dan high-score tracker.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-indigo-400 font-mono text-xs">C++ (Logic)</span>
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-indigo-400 font-mono text-xs">JavaScript</span>
+                                <span class="px-2.5 py-1 rounded-md bg-cyber-dark text-indigo-400 font-mono text-xs">Canvas API</span>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-2 border-t border-cyber-border">
+                                <a href="https://github.com" target="_blank" class="text-sm font-medium text-gray-300 hover:text-indigo-400 flex items-center space-x-1.5">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#demo" onclick="showNotification('Membuka demo live Cyber Runner Game...')" class="text-sm font-medium text-indigo-400 hover:text-indigo-300 flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Terminal Section -->
+    <section id="terminal" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 space-y-3">
+                <h2 class="font-mono text-cyan-400 text-sm tracking-widest uppercase">// 04. INTERACTIVE TERMINAL</h2>
+                <h3 class="text-3xl font-bold text-white">Developer Command Line</h3>
+                <p class="text-gray-400 text-sm">Ketik perintah di terminal interaktif di bawah ini atau gunakan tombol shortcut.</p>
+            </div>
+
+            <!-- Terminal Box -->
+            <div class="bg-cyber-card border border-cyber-border rounded-2xl shadow-2xl overflow-hidden">
+                <!-- Terminal Header -->
+                <div class="bg-[#161f33] px-6 py-4 flex items-center justify-between border-b border-cyber-border">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <span class="font-mono text-xs text-gray-400">bash - alex@informatics:~</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="clearTerminal()" class="text-xs text-gray-400 hover:text-white font-mono px-2 py-1 rounded bg-cyber-dark border border-cyber-border">Clear</button>
+                        <button onclick="copyTerminal()" class="text-xs text-cyan-400 hover:text-cyan-300 font-mono px-2 py-1 rounded bg-cyber-dark border border-cyber-border flex items-center space-x-1">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copy</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Terminal Body -->
+                <div id="terminal-body" class="p-6 font-mono text-sm text-gray-300 space-y-3 h-80 overflow-y-auto">
+                    <p class="text-gray-500">Welcome to AlexOS v2.6.4 (x86_64-pc-linux-gnu)</p>
+                    <p class="text-emerald-400">Type <span class="text-cyan-400 font-bold">help</span> to view available commands.</p>
+                    <div class="space-y-2" id="terminal-history">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-cyan-400">alex@informatics:~$</span>
+                            <span class="text-white">cat quote.txt</span>
+                        </div>
+                        <p class="text-gray-400 italic pl-4">"There are 10 types of people in the world: those who understand binary, and those who don't."</p>
+                    </div>
+                </div>
+
+                <!-- Terminal Input Form -->
+                <form id="terminal-form" onsubmit="handleTerminalCommand(event)" class="bg-[#111827] px-6 py-4 border-t border-cyber-border flex items-center space-x-3">
+                    <span class="text-cyan-400 font-mono font-bold">alex@informatics:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" placeholder="try: help, skills, projects, contact, clear..." class="flex-1 bg-transparent font-mono text-sm text-white focus:outline-none">
+                    <button type="submit" class="px-4 py-1.5 rounded bg-cyan-500 text-cyber-dark font-bold font-mono text-xs hover:bg-cyan-400 transition-colors">Run</button>
+                </form>
+            </div>
+
+            <!-- Quick Command Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mt-6">
+                <button onclick="runCommand('help')" class="px-3 py-1.5 rounded-lg bg-cyber-card border border-cyber-border font-mono text-xs text-gray-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all">help</button>
+                <button onclick="runCommand('skills')" class="px-3 py-1.5 rounded-lg bg-cyber-card border border-cyber-border font-mono text-xs text-gray-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all">skills</button>
+                <button onclick="runCommand('projects')" class="px-3 py-1.5 rounded-lg bg-cyber-card border border-cyber-border font-mono text-xs text-gray-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all">projects</button>
+                <button onclick="runCommand('status')" class="px-3 py-1.5 rounded-lg bg-cyber-card border border-cyber-border font-mono text-xs text-gray-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all">status</button>
+                <button onclick="runCommand('contact')" class="px-3 py-1.5 rounded-lg bg-cyber-card border border-cyber-border font-mono text-xs text-gray-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all">contact</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <section id="contact" class="py-20 bg-cyber-card/40 border-t border-cyber-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <div class="space-y-3 max-w-2xl mx-auto">
+                <h2 class="font-mono text-indigo-400 text-sm tracking-widest uppercase">// 05. GET IN TOUCH</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Let's Build Something Amazing Together</h3>
+                <p class="text-gray-400">Punya proyek kolaborasi, pertanyaan seputar teknik informatika, atau sekadar ingin berdiskusi soal teknologi? Kirim pesan!</p>
+            </div>
+
+            <!-- Social Links Grid -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://github.com" target="_blank" class="px-6 py-3 rounded-xl bg-cyber-card border border-cyber-border text-gray-200 font-mono text-sm hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center space-x-2">
+                    <i class="fa-brands fa-github text-lg"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="px-6 py-3 rounded-xl bg-cyber-card border border-cyber-border text-gray-200 font-mono text-sm hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center space-x-2">
+                    <i class="fa-brands fa-linkedin text-lg"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:alexandro@student.ac.id" class="px-6 py-3 rounded-xl bg-cyber-card border border-cyber-border text-gray-200 font-mono text-sm hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                    <span>Email Me</span>
+                </a>
+                <a href="https://discord.com" target="_blank" class="px-6 py-3 rounded-xl bg-cyber-card border border-cyber-border text-gray-200 font-mono text-sm hover:border-cyan-500 hover:text-cyan-400 transition-all flex items-center space-x-2">
+                    <i class="fa-brands fa-discord text-lg"></i>
+                    <span>Discord</span>
+                </a>
+            </div>
+
+            <!-- Copyright footer -->
+            <div class="pt-12 border-t border-cyber-border flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 font-mono">
+                <p>&copy; 2026 Alexandro. All rights reserved. Built with Tailwind CSS & Coffee.</p>
+                <p class="mt-2 sm:mt-0 text-cyan-400">Status: <span class="text-emerald-400">Online & Ready to Code</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Notification Box -->
+    <div id="notification-box" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-cyber-card border border-cyan-500/50 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center space-x-3">
+        <i class="fa-solid fa-circle-info text-cyan-400 text-lg"></i>
+        <span id="notification-text" class="text-sm font-mono">Notifikasi sistem</span>
+    </div>
+
+    <!-- JavaScript for Terminal and Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Notification system (Replacing alert)
+        function showNotification(message) {
+            const box = document.getElementById('notification-box');
+            const text = document.getElementById('notification-text');
+            text.textContent = message;
+            box.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                box.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Terminal Logic
+        const terminalHistory = document.getElementById('terminal-history');
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalBody = document.getElementById('terminal-body');
+
+        function handleTerminalCommand(e) {
+            e.preventDefault();
+            const cmd = terminalInput.value.trim().toLowerCase();
+            if (!cmd) return;
+
+            // Add command to history
+            const cmdDiv = document.createElement('div');
+            cmdDiv.className = 'space-y-1';
+            cmdDiv.innerHTML = `<div class="flex items-center space-x-2"><span class="text-cyan-400">alex@informatics:~$</span><span class="text-white">${escapeHtml(terminalInput.value)}</span></div>`;
+            
+            // Execute command response
+            const resDiv = document.createElement('div');
+            resDiv.className = 'text-gray-400 pl-4 space-y-1';
+            resDiv.innerHTML = getCommandResponse(cmd);
+
+            terminalHistory.appendChild(cmdDiv);
+            terminalHistory.appendChild(resDiv);
+
+            terminalInput.value = '';
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+
+        function runCommand(cmdText) {
+            terminalInput.value = cmdText;
+            const event = new Event('submit', { cancelable: true });
+            document.getElementById('terminal-form').dispatchEvent(event);
+        }
+
+        function getCommandResponse(cmd) {
+            switch(cmd) {
+                case 'help':
+                    return `
+                        <p class="text-cyan-300 font-semibold">Available Commands:</p>
+                        <p>• <span class="text-emerald-400">skills</span> - Menampilkan daftar tech stack utama</p>
+                        <p>• <span class="text-emerald-400">projects</span> - Menampilkan ringkasan proyek unggulan</p>
+                        <p>• <span class="text-emerald-400">status</span> - Cek status akademik dan ketersediaan proyek</p>
+                        <p>• <span class="text-emerald-400">contact</span> - Informasi kontak dan sosial media</p>
+                        <p>• <span class="text-emerald-400">clear</span> - Membersihkan layar terminal</p>
+                        <p>• <span class="text-emerald-400">sudo rm -rf /</span> - Coba jika berani (risiko ditanggung sendiri!)</p>
+                    `;
+                case 'skills':
+                    return `<p class="text-emerald-400">> C++, Python, JavaScript, HTML5/CSS3, Tailwind CSS, React.js, Git, MySQL, Linux.</p>`;
+                case 'projects':
+                    return `<p class="text-cyan-400">> 1. Interactive Web Scrapbook<br>> 2. Algorithmic Visualizer<br>> 3. Cyber Runner Game Mechanics</p>`;
+                case 'status':
+                    return `<p class="text-yellow-400">> GPA: 3.88 / 4.00 | Status: Available for freelance & internship projects.</p>`;
+                case 'contact':
+                    return `<p class="text-indigo-400">> Email: alexandro@student.ac.id | GitHub: github.com/alexandro-dev</p>`;
+                case 'clear':
+                    terminalHistory.innerHTML = '';
+                    return '';
+                case 'sudo rm -rf /':
+                    return `<p class="text-red-500 font-bold">Nice try! Permission denied: incident reported to root admin 🚨</p>`;
+                default:
+                    return `<p class="text-red-400">command not found: ${escapeHtml(cmd)}. Type <span class="text-cyan-400">help</span> for available commands.</p>`;
+            }
+        }
+
+        function clearTerminal() {
+            terminalHistory.innerHTML = '';
+            showNotification('Terminal dibersihkan.');
+        }
+
+        function copyTerminal() {
+            const textContent = terminalHistory.innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = textContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showNotification('Riwayat terminal berhasil disalin!');
+            } catch (err) {
+                showNotification('Gagal menyalin teks.');
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+    </script>
+</body>
+</html>
